@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>EDocuments</title>
+</head>
+<body>
+
+
+
+<h1>Document Information</h1>
+
+<form th:method="PATCH" th:action="@{/documents/{id}(id=${companyDocument.getId()})}" th:object="${companyDocument}">
+    <!--    ID: <input type="number" name="id"><br><br>-->
+    <label for="designation">Designation</label>
+    <input type="text" th:field="*{designation}" id="designation"><br><br>
+    <label for="designation">Description</label>
+    <input type="text" th:field="*{description}" id="description"><br><br>
+    <input type="submit" value="Update!"/>
+</form>
+
+<form th:method="PATCH" th:action="@{/documents/delete/{id}(id=${companyDocument.getId()})}" th:object="${companyDocument}">
+    <input type="submit" value="Delete!"/>
+</form>
+
+</body>
+</html>

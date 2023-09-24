@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>EDocuments</title>
+</head>
+<body>
+
+<form action="" method="get">
+    Поиск по номеру: <input type="text" name="designation"><br>
+    <input type="submit" value="Поиск">
+</form>
+
+<h1>List of all documents</h1>
+<hr>
+
+<!--<h4>Add new document</h4> | <input type="submit" value="Create!"/>-->
+
+<div th:each="companyDocument : ${companyDocuments}">
+    <a th:href="@{/documents/{id}(id=${companyDocument.getId()})}" th:text="${companyDocument.getDesignation()}">document</a>
+</div>
+<hr>
+<!--<h3>New document</h3>-->
+<!--<form action="/documents/create" method="post">-->
+<!--&lt;!&ndash;    ID: <input type="number" name="id"><br><br>&ndash;&gt;-->
+<!--    Designation: <input type="text" name="designation"><br><br>-->
+<!--    Description: <input type="text" name="description"><br><br>-->
+<!--    <input type="submit" value="Create!"/>-->
+<!--</form>-->
+<a href="/documents/new">Create new document</a>
+</body>
+</html>

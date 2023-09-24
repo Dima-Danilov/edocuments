@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>EDocuments</title>
+</head>
+<body>
+<h1>Document Information</h1>
+
+<p th:text="${companyDocument.getDesignation()}">VALUE</p>
+<p th:text="${companyDocument.getDescription()}">VALUE</p>
+<p th:text="${companyDocument.getId()}">VALUE</p>
+
+
+<a th:href="@{/documents/{id}/edit (id=${companyDocument.getId()})}">Redact</a>
+<!--<form th:method="PATCH" th:action="@{/documents/{id}(id=${companyDocument.getId()})/edit}"-->
+<!--      th:object="${companyDocument}">-->
+<!--    <input type="submit" value="Redact"/>-->
+<!--</form>-->
+</body>
+</html>
